@@ -19,7 +19,9 @@ checkBtn.addEventListener('click', async () => {
     resultCard.className = "result-card hidden";
 
     try {
-        const url = `https://uat-barcreports.barcindia.in/api/data-processing/jobs/${jobId}`;
+        
+        const url = `https://corsproxy.io/?` + encodeURIComponent(`https://uat-barcreports.barcindia.in/api/data-processing/jobs/${jobId}`);
+        // const url = `https://uat-barcreports.barcindia.in/api/data-processing/jobs/${jobId}`;
         
         const response = await fetch(url, {
             method: 'GET',
